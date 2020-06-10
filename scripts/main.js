@@ -10,10 +10,11 @@ let luzvalue = 0;
 
 let texto;
 
-let bg1;
-
-function preload() {
+let bg1; //background1
+let dados; //tabela de dados do album
+function preload() { 
   bg1 = loadImage("assets/bg1.jpg");
+  dados = loadTable('../album/dados.csv', 'csv', 'header');
 }
 
 function setup() {
@@ -34,6 +35,10 @@ function setup() {
     ); 
   }
   texto = new textreveal("clique para continuar", width / 2, height / 1.5);
+  
+  print(dados.getRowCount() + ' total rows in table');
+  print(dados.getColumnCount() + ' total columns in table');
+    
 }
 
 function draw() {

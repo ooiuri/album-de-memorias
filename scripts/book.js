@@ -1,1 +1,5 @@
-class pag
+class pagina{
+  constructor(){
+    
+  }
+}

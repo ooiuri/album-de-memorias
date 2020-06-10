@@ -36,7 +36,7 @@ class flower {
 
   move() {
     this.yPos -= this.speed;
-    this.speedX =(mouseX - width / 2) * this.scalef * .1;
+    this.speedX = (mouseX - width / 2) * this.scalef * .1;
     //this.speedX*=0.9
     this.xPos += this.speedX;
     if (this.xPos < 0 - 2 * this.rad)
