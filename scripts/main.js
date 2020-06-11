@@ -1,6 +1,7 @@
 // código principal  //
 //eu to mudando
 //to mudando denovo aaaaaaaa
+//mais uma vez
 var numero_flores = 10;
 let flor = [numero_flores]; //objeto flor que fica no background
 var lastmousex;
