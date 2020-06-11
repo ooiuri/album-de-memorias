@@ -75,11 +75,11 @@ body {
   
   @keyframes move {
     0% {
-      right:0;
+      left:0;
       opacity:0;
     }
       35% {
-          right: 41%; 
+          left: 41%; 
           -moz-transform:rotate(0deg);
           -webkit-transform:rotate(0deg);
           -o-transform:rotate(0deg);
@@ -87,7 +87,7 @@ body {
           opacity:1;
       }
       65% {
-          right:59%; 
+          left:59%; 
           -moz-transform:rotate(0deg); 
           -webkit-transform:rotate(0deg); 
           -o-transform:rotate(0deg);
@@ -95,7 +95,7 @@ body {
           opacity:1;
       }
       100% {
-          right:100%; 
+          left:100%; 
           -moz-transform:rotate(-180deg); 
           -webkit-transform:rotate(-180deg); 
           -o-transform:rotate(-180deg); 
@@ -106,23 +106,23 @@ body {
   
   @-moz-keyframes move {
       0% {
-          right:0; 
+          left:0; 
           opacity:0;
       }
       35% {
-          right:41%; 
+          left:41%; 
           -moz-transform:rotate(0deg); 
           transform:rotate(0deg);
           opacity:1;
       }
       65% {
-          right:59%; 
+          left:59%; 
           -moz-transform:rotate(0deg); 
           transform:rotate(0deg);
           opacity:1;
       }
       100% {
-          right:100%; 
+          left:100%; 
           -moz-transform:rotate(-180deg); 
           transform:rotate(-180deg);
           opacity:0;
@@ -131,23 +131,23 @@ body {
   
   @-webkit-keyframes move {
       0% {
-          right:0; 
+          left:0; 
           opacity:0;
       }
       35% {
-          right:41%; 
+          left:41%; 
           -webkit-transform:rotate(0deg); 
           transform:rotate(0deg); 
           opacity:1;
       }
       65% {
-          right:59%; 
+          left:59%; 
           -webkit-transform:rotate(0deg); 
           transform:rotate(0deg); 
           opacity:1;
       }
       100% {
-          right:100%;
+          left:100%;
           -webkit-transform:rotate(-180deg); 
           transform:rotate(-180deg); 
           opacity:0;
@@ -156,23 +156,23 @@ body {
   
   @-o-keyframes move {
       0% {
-          right:0; 
+          left:0; 
           opacity:0;
       }
       35% {
-          right:41%; 
+          left:41%; 
           -o-transform:rotate(0deg); 
           transform:rotate(0deg); 
           opacity:1;
       }
       65% {
-          right:59%; 
+          left:59%; 
           -o-transform:rotate(0deg); 
           transform:rotate(0deg); 
           opacity:1;
       }
       100% {
-          right:100%; 
+          left:100%; 
           -o-transform:rotate(-180deg); 
           transform:rotate(-180deg); 
           opacity:0;
