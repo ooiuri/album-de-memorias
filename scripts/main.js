@@ -1,5 +1,5 @@
-// código principal to testandooidsoaidoasio  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
-var numero_flores = 5;
+// código principal  //
+var numero_flores = 10;
 let flor = [numero_flores]; //objeto flor que fica no background
 var lastmousex;
 var scribble; //retangulo desenhado a mao
@@ -8,13 +8,13 @@ var pag = 0; // variável controle de caminho
 var luz = true;
 let luzvalue = 0;
 /////////////////////////////////////////////////////////////////////
-//dsadasdasdas corno
+
 let texto;
 
-let bg//1; //background1
+let bg1; //background1
 let dados; //tabela de dados do album
 function preload() { 
-  bg1 = loadImage("/assets/foto01.png");//aaaaaa
+  bg1 = loadImage("/assets/bg1.jpg");//aaaaaa
   dados = loadTable('./album/dados.csv', 'csv', 'header');
 }
 
@@ -27,7 +27,7 @@ function setup() {
   //Criando as flores
   for (i = 0; i < numero_flores; i++) {
     flor[i] = new flower(
-      random(windowWidth),     //xPos
+      random(windowWidth) ,    //xPos
       random(windowHeight),    //yPos
       11,  //numLeafs
       10,   //speed
@@ -35,7 +35,7 @@ function setup() {
     ); 
   }
   texto = new textreveal("clique para continuar", width / 2, height / 1.5);
-  
+  //book(pag);
   
 }
 
