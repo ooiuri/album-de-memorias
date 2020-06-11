@@ -79,7 +79,7 @@ function transicao(value = 1, time = 0, chama ){
         color(255);
         rect(time*vel-width,0,width,height);
         print(time*vel+ ' ' + width);
-        if (tempo)
+        
       }else{
         chama = false;
         console.log('acabou');
