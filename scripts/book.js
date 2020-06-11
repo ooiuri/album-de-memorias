@@ -4,7 +4,7 @@ function book(pag){
   if(pag < 3) return;
   image(bg1, (mouseX*0.01+width/2),(mouseY*0.01+height/2));
   let npages = dados.getColumnCount();
-  
+  scribble.scribbleFilling( width/2, height/2, 10, 10 );
 }
 
 class pagina{
