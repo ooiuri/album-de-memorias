@@ -1,33 +1,49 @@
 let frame;
-let booksetup = 0;
+let booksetup = 0;  //variavel de inicialização
+let pagina = [];    //criação de array de paginas
+
 function book(pag){
-  if(pag < 3) return;
+  if(pag < 3) return; //função roda somente após pag >= 3
   if(booksetup == 0){
     color('white');
     frame = new Scribble();
-    let npages = dados.getColumnCount();
+    let nPages = dados.getRowCount();
+    for(var i = 0; i < nPages; i++){
+      pagina[i] = new paginas(dados.get(i,'url'),dados.get(i,'legenda'));
+    }
+    console.log(pagina[0]);
+    booksetup++;
   }
-  
-    //image(bg1, (mouseX*0.01+width/2),(mouseY*0.01+height/2));
-    color('white');
-    fill('white');
-    strokeWeight( 10 );
-    strokeWeight( 3 );
-      //set the color of the hachure to a nice blue
-    stroke( 0, 50, 180 );
-    frame.scribbleRect( width/2, height/2, 100, 100 );
-    frame.scribbleFilling( width/3, height/2, 3.5, 100 );
+    background(0);
+    pagina[pag-3].showImage();
+    pagina[pag-3].showText();
   
 }
 
-class pagina{
-  constructor(url, legenda){
-    this.url = 'url';
-    this.legenda = 'legenda';
+class paginas{
+  constructor(url, legenda, x = width*.25, y = height/2 ){
+    this.x = x;
+    this.y = y;
+    this.url = url;
+    legenda = quebraLinha(legenda);
+    this.legenda = new textreveal(legenda,this.x*3,this.y);
     this.foto = loadImage(this.url);
   }
-  show(){
+  showImage(x = width*.25,y = height/2){
     imageMode(CENTER);
-    img(this.foto, height/2, width/2);
+    noTint();
+    image(this.foto, this.x = x, this.y =y);
   }
+  showText(){
+    noStroke();
+    fill('white');
+    this.legenda.show();
+  }
+}
+//função para identificar quebra de linha, gambiarra? talvez.
+function quebraLinha(legendas){
+  let words = legendas.split("/n");
+  let newText = words.join('\n');
+  console.log(newText);
+  return newText;
 }

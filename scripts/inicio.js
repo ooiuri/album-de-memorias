@@ -27,11 +27,12 @@ function inicio(ativo,pag) {
   if (pag == 1) {
     
     //escrever o texto para continuar
-    h = map(constrain(mouseY, height / 3, height), 0, height, 0, 90); //
+    h = map(constrain(mouseY, height*.25, height*.5), 0, height, 0, 90); //
     fill(255, h * 3 - 100);
     strokeWeight(1);
     textAlign(CENTER);
     //showtext('clique para continuar',width/2,height/1.5,true);
+    rect(texto.x, height / 2, 300, 150, 10);
     texto.show();
     //text("clique para continuar", width/2,height/1.5);
     luzvalue = 0;
