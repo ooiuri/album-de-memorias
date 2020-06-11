@@ -9,6 +9,8 @@ var luz = true;
 let luzvalue = 0;
 /////////////////////////////////////////////////////////////////////
 
+let chama = 0;
+
 let texto;
 
 let bg1; //background1
@@ -20,7 +22,8 @@ function preload() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight); //criando canva
-  background("black");
+  //background("black");
+  background(255,182,193);
   lastmousex = mouseX;
   scribble = new Scribble();
   textSize(18);
@@ -34,15 +37,32 @@ function setup() {
       (2-0.05)*(i+1)/numero_flores //scalef (2-0.05)*(i+1)/numero_flores
     ); 
   }
-  texto = new textreveal("clique para continuar", width / 2, height / 1.5);
+  texto = new textreveal("clique para continuar", width / 2, height / 1.5, 18);
   //book(pag);
   
 }
+
 
 function draw() {
   //background(0);
   inicio(pag < 3,pag);
   book(pag);
+}
+
+
+function transicao(value = 1){
+  console.log('chamei')
+    if(value = 1){ //modelo de transição 1
+      for(var i = 1; i < 2* width; i += .1){
+        clear();
+        background(cordoFundo)
+        fill(255);
+        color(255);
+        rect(i-width,0,width,height);
+      }
+    }
+    console.log('acabou');
+    chama = 0;
 }
 
 //reconhece cliques do mouse
