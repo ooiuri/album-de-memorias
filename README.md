@@ -1,2 +1,0 @@
-# album-de-memorias
-AAAAAAAAAAAAAAAAAAA

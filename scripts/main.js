@@ -1,4 +1,5 @@
 // código principal  //
+//eu to mudando
 var numero_flores = 10;
 let flor = [numero_flores]; //objeto flor que fica no background
 var lastmousex;
@@ -53,24 +54,29 @@ function draw() {
   print('dnv:'+ chama);
   chama = transicao(1,time, chama);
   time++;
-  noLoop();
+  //noLoop();
 
 }
 
 
 function transicao(value = 1, time = 0, chama ){
-  push();
-  if (chama = true)
+  
+  if (chama == true){
+    push();
     console.log('chamei');
-    if(value = 1){ //modelo de transição 1
+    if(value == 1){ //modelo de transição 1
+
       let vel = 50;
+      let troca = width/2
+
       if(time* vel < 2* width){
         //clear();
         //background(cordoFundo);
         fill(255);
         color(255);
         rect(time*vel-width,0,width,height);
-        print(time*vel+ ' ' + width)
+        print(time*vel+ ' ' + width);
+        if (tempo)
       }else{
         chama = false;
         console.log('acabou');
@@ -79,13 +85,14 @@ function transicao(value = 1, time = 0, chama ){
     }
     pop();
     return chama;
+  }
 }
 
 //reconhece cliques do mouse
 function mousePressed() {
   chama = !chama;
   time = 0;
-  pag = pag + 1;
+  //pag = pag + 1;
   if (pag > 2 + dados.getRowCount()) pag = 0;
 }
 
