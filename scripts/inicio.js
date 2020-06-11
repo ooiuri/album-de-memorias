@@ -49,7 +49,7 @@ function inicio(ativo,pag) {
     // background(196,162,143,luzvalue);
     //bg1.resize(100, 100)
     background(0,luzvalue);
-    if(luzvalue > 180) nextPag();
+    if(luzvalue > 100) nextPag();
     /*
     tint(255, luzvalue * 10);
     imageMode(CENTER);
