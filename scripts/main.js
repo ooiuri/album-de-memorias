@@ -7,9 +7,10 @@ var scribble; //retangulo desenhado a mao
 var pag = 0; // variável controle de caminho
 var luz = true;
 let luzvalue = 0;
+var time = 0;
 /////////////////////////////////////////////////////////////////////
 
-let chama = 0;
+let chama = false;
 
 let texto;
 
@@ -39,34 +40,51 @@ function setup() {
   }
   texto = new textreveal("clique para continuar", width / 2, height / 1.5, 18);
   //book(pag);
+  chama = false;
   
 }
 
 
 function draw() {
+  print(chama);
   //background(0);
   inicio(pag < 3,pag);
   book(pag);
+  print('dnv:'+ chama);
+  chama = transicao(1,time, chama);
+  time++;
+  noLoop();
+
 }
 
 
-function transicao(value = 1){
-  console.log('chamei')
+function transicao(value = 1, time = 0, chama ){
+  push();
+  if (chama = true)
+    console.log('chamei');
     if(value = 1){ //modelo de transição 1
-      for(var i = 1; i < 2* width; i += .1){
-        clear();
-        background(cordoFundo)
+      let vel = 50;
+      if(time* vel < 2* width){
+        //clear();
+        //background(cordoFundo);
         fill(255);
         color(255);
-        rect(i-width,0,width,height);
+        rect(time*vel-width,0,width,height);
+        print(time*vel+ ' ' + width)
+      }else{
+        chama = false;
+        console.log('acabou');
+        //nextPag();
       }
     }
-    console.log('acabou');
-    chama = 0;
+    pop();
+    return chama;
 }
 
 //reconhece cliques do mouse
 function mousePressed() {
+  chama = !chama;
+  time = 0;
   pag = pag + 1;
   if (pag > 2 + dados.getRowCount()) pag = 0;
 }
